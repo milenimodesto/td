@@ -1,0 +1,16 @@
+// algumas funções prontas, como é o caso de funções matemáticas (Math em inglês)
+// Math.floor(): Faz o arredondamento para o valor mais baixo, também conhecido como piso (floor em inglês).
+const tempoObjetivo1 = new Date("2024-10-05T00:00:00"); // data futura do meu objetivo - meta de algo específico
+function calculaTempo(tempoObjetivo) {
+    let tempoAtual = new Date();   // data atual
+    let tempoFinal = tempoObjetivo - tempoAtual; // meta futura menos a data atual - quanto tempo em milisegundos
+    let segundos = Math.floor(tempoFinal / 1000); // milisegundos transformados em segundos = 1000 milisegundo equivale a 1 segundos
+    let minutos = Math.floor(segundos / 60);
+    let horas = Math.floor(minutos / 60);
+    let dias = Math.floor(horas / 24);
+    segundos %= 60;  // operacao de módulo (resto)
+    minutos %= 60;
+    horas %= 24;
+    return dias + " dias " + horas + " horas "+ minutos + " minutos "+ segundos +  " segundos";
+    }
+console.log(calculaTempo(tempoObjetivo1))
